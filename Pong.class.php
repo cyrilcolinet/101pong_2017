@@ -56,14 +56,19 @@ class Pong {
 	 ** Print vector coordinates
 	 **/
 	private function print_vector() {
-		echo "(" . $this->print_float($this->x) . ";" . $this->print_float($this->y) . ";" . $this->print_float($this->z) . ")\n";
+		$coords = array(
+			$this->print_float($this->x),
+			$this->print_float($this->y),
+			$this->print_float($this->z)
+		);
+		$this->printf_array("(%s;%s;%s)\n", $coords);
 	}
 
 	/**
 	 ** Calculate speed vector
 	 **/
 	public function speed_vector() {
-		echo "The speed vector coordinates are :\n";
+		print("The speed vector coordinates are :\n");
 		$this->x = $this->vector_s[0];
 		$this->y = $this->vector_s[1];
 		$this->z = $this->vector_s[2];
@@ -78,7 +83,7 @@ class Pong {
 		$this->y = $this->vector_t[1] + $this->vector_s[1] * $this->n;
 		$this->z = $this->vector_t[2] + $this->vector_s[2] * $this->n;
 
-		echo "At time t+" . $this->n . ", ball coordinates will be :\n";
+		print("At time t+" . $this->n . ", ball coordinates will be :\n");
 		$this->print_vector();
 	}
 
@@ -93,11 +98,19 @@ class Pong {
 			$ang = 180 * ($ang_rad - (pi() / 2)) / pi();
 			$ang = abs($ang);
 
-			echo "The incidence angle is :\n";
-			echo $this->print_float($ang) . " degrees\n";
+			print("The incidence angle is :\n");
+			print($this->print_float($ang) . " degrees\n");
 		} else {
-			echo "The ball won’t reach the bat.\n";
+			print("The ball won’t reach the bat.\n");
 		}
+	}
+
+	/**
+	 ** Print format with array
+	 ** @return result of function printf
+	 **/
+	private function printf_array($format, $arr) { 
+    	return call_user_func_array('printf', array_merge((array)$format, $arr)); 
 	}
 
 }
