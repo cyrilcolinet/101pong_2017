@@ -14,18 +14,9 @@ class Pong {
 	private $n;
 
 	public function __construct($arg) {
-		$this->x = array(
-			floatval($arg[1]), 
-			floatval($arg[4])
-		);
-		$this->y = array(
-			floatval($arg[2]), 
-			floatval($arg[5])
-		);
-		$this->z = array(
-			floatval($arg[3]), 
-			floatval($arg[6])
-		);
+		$this->x = array(floatval($arg[1]), floatval($arg[4]));
+		$this->y = array(floatval($arg[2]), floatval($arg[5]));
+		$this->z = array(floatval($arg[3]), floatval($arg[6]));
 		$this->n = intval($arg[7]);
 	}
 
