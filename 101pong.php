@@ -25,3 +25,4 @@ $pong = new Pong($argv);
 $pong->speed_vector();
 $pong->n_time_vector();
 $pong->incidence_angle();
+exit();
