@@ -35,8 +35,10 @@ class Pong {
 		);
 		$this->n = intval($arg[7]);
 
-		if ($this->n < 0)
-			throw new Exception("Argument n°7 must be positive or null.", 1);
+		if ($this->n < 0) {
+			print("Argument n°7 must be positive or null.\n");
+			exit(1);
+		}
 	}
 
 	/**
@@ -45,8 +47,10 @@ class Pong {
 	 ** @return (String) $v - Formated float
 	 **/
 	private function print_float($float = null) {
-		if (is_null($float))
-			throw new Exception("Cannot convert null value.", 1);
+		if (is_null($float)) {
+			print("Cannot convert null value.\n");
+			exit(1);
+		}
 			
 		$v = number_format(floatval($float), 2, '.', '');
 		return $v;
