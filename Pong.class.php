@@ -96,7 +96,7 @@ class Pong {
 	 ** WARN: rebound on bat
 	 **/
 	public function incidence_angle() {
-		if ($this->vector_s[2] != 0 && ((-$this->vector_t[2]) / $this->vector_s[2]) >= 0 && $this->vector_t[0] != 0) {
+		if ($this->vector_s[2] != 0 && ((-$this->vector_t[2]) / $this->vector_s[2]) >= 0) {
 			$abs_s_vector = sqrt(pow($this->vector_s[0], 2) + pow($this->vector_s[1], 2) + pow($this->vector_s[2], 2));
 			$ang_rad = acos($this->vector_s[2] / $abs_s_vector);
 			$ang = 180 * ($ang_rad - (pi() / 2)) / pi();
