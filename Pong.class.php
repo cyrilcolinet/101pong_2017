@@ -18,10 +18,6 @@ class Pong {
 	private $vector_s;
 	private $vector_t;
 
-	/**
-	 ** Pong constructor
-	 ** @param (array) $arg - Arguments behind the command
-	 **/
 	public function __construct($arg) {
 		$this->vector_s = array(
 			floatval($arg[4]) - floatval($arg[1]),
@@ -41,11 +37,6 @@ class Pong {
 		}
 	}
 
-	/**
-	 ** Print float with two decimals
-	 ** @param (float) $float = null - Float to display
-	 ** @return (String) $v - Formated float
-	 **/
 	private function print_float($float = null) {
 		if (is_null($float)) {
 			print("Cannot convert null value.\n");
@@ -56,9 +47,6 @@ class Pong {
 		return $v;
 	}
 
-	/**
-	 ** Print vector coordinates
-	 **/
 	private function print_vector() {
 		$coords = array(
 			$this->print_float($this->x),
@@ -68,9 +56,6 @@ class Pong {
 		$this->printf_array("(%s;%s;%s)\n", $coords);
 	}
 
-	/**
-	 ** Calculate speed vector
-	 **/
 	public function speed_vector() {
 		print("The speed vector coordinates are :\n");
 		$this->x = $this->vector_s[0];
@@ -79,9 +64,6 @@ class Pong {
 		$this->print_vector();
 	}
 
-	/**
-	 ** Calculate t+n vector
-	 **/
 	public function n_time_vector() {
 		$this->x = $this->vector_t[0] + $this->vector_s[0] * $this->n;
 		$this->y = $this->vector_t[1] + $this->vector_s[1] * $this->n;
@@ -91,10 +73,6 @@ class Pong {
 		$this->print_vector();
 	}
 
-	/**
-	 ** Calculate incidence angle
-	 ** WARN: rebound on bat
-	 **/
 	public function incidence_angle() {
 		if ($this->vector_s[2] != 0 && ((-$this->vector_t[2]) / $this->vector_s[2]) >= 0) {
 			$abs_s_vector = sqrt(pow($this->vector_s[0], 2) + pow($this->vector_s[1], 2) + pow($this->vector_s[2], 2));
@@ -109,10 +87,6 @@ class Pong {
 		}
 	}
 
-	/**
-	 ** Print format with array
-	 ** @return result of function printf
-	 **/
 	private function printf_array($format, $arr) { 
     	return call_user_func_array('printf', array_merge((array)$format, $arr)); 
 	}

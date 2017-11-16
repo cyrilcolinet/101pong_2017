@@ -9,13 +9,11 @@
 
 include "Pong.class.php";
 
-// Check argument count
 if (count($argv) != 8) {
 	printf("Missing arguments. 7 arguments needed but %d given.\n", (count($argv) - 1));
 	exit(1);
 }
 
-// Check if all arguments is numeric
 for ($i = 1; $i < 8; $i++) { 
 	if (!is_numeric($argv[$i])) {
 		printf("Argument n°%d (%s) is not an number.\n", $i, $argv[$i]);
