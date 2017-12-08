@@ -8,8 +8,6 @@
 
 class Pong {
 
-	private $args = array();
-
 	private $x;
 	private $y;
 	private $z;
@@ -42,7 +40,7 @@ class Pong {
 			print("Cannot convert null value.\n");
 			exit(1);
 		}
-			
+
 		$v = number_format(floatval($float), 2, '.', '');
 		return $v;
 	}
