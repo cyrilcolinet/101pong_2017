@@ -1,0 +1,4 @@
+language: php
+group: stable
+os: linux
+script: make re
