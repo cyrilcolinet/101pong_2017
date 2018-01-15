@@ -2,3 +2,5 @@ language: php
 group: stable
 os: linux
 script: make re
+notifications:
+  email: false
