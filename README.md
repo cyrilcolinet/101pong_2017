@@ -1,4 +1,4 @@
-# Pong - Vectors and video games
+# Pong - Vectors and video games [![Build Status](https://travis-ci.org/mrlizzard/101pong_2017.svg?branch=master)](https://travis-ci.org/mrlizzard/101pong_2017)
 
 - **Binary name:** 101pong
 - **Repository name:** 101pong_2017
