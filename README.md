@@ -4,7 +4,7 @@
 - **Repository name:** 101pong_2017
 - **Repository rigths:** ramassage-tek
 - **Language:** C, C++, perl 5, python 3 (>= 3.5), ruby 2 (>= 2.2), php 5.6, bash 4
-- **Choosen language:** PHP
+- **Choosed language:** PHP
 - **Compilation:** via Makefile, including re, clean and fclean rules
 
 
